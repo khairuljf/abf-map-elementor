@@ -79,7 +79,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return esc_html__( 'Abf Map', 'elementor-oembed-widget' );
+        return esc_html__( 'Abf Map', 'abf_addon' );
     }
 
     /**
@@ -165,7 +165,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__( 'Abf Map Marker', 'abf-addon' ),
+                'label' => esc_html__( 'Abf Map Marker', 'abf_addon' ),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -178,7 +178,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_pin_icon',
             array(
-                'label'   => __('Custom Pin Icon', 'abf-addon'),
+                'label'   => __('Custom Pin Icon', 'abf_addon'),
                 'type'    => Controls_Manager::MEDIA,
                 'dynamic' => array('active' => true),
                 'default' =>[
@@ -191,7 +191,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
             'abf_map_latitude',
             array(
                 'name'        => 'abf_map_latitude',
-                'label'       => __('Latitude', 'abf-addon'),
+                'label'       => __('Latitude', 'abf_addon'),
                 'type'        => Controls_Manager::TEXT,
                 'dynamic'     => array('active' => true),
                 'description' => 'Click <a href="https://www.latlong.net/" target="_blank">here</a> to get your location coordinates',
@@ -204,7 +204,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
             'abf_map_longitude',
             array(
                 'name'        => 'abf_map_longitude',
-                'label'       => __('Longitude', 'abf-addon'),
+                'label'       => __('Longitude', 'abf_addon'),
                 'type'        => Controls_Manager::TEXT,
                 'dynamic'     => array('active' => true),
                 'description' => 'Click <a href="https://www.latlong.net/" target="_blank">here</a> to get your location coordinates',
@@ -216,7 +216,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_pin_title',
             array(
-                'label'       => __('Pin Popup Title', 'abf-addon'),
+                'label'       => __('Pin Popup Title', 'abf_addon'),
                 'type'        => Controls_Manager::TEXT,
                 'dynamic'     => array('active' => true),
                 'default'     => 'Dhaka, Bangladesh',
@@ -227,7 +227,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_pin_desc',
             array(
-                'label'       => __('Pin Popup Description', 'abf-addon'),
+                'label'       => __('Pin Popup Description', 'abf_addon'),
                 'type'        => Controls_Manager::TEXTAREA,
                 'dynamic'     => array('active' => true),
                 'default'     => 'Location Description',
@@ -238,9 +238,9 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_map_link',
             [
-                'label' => esc_html__( 'Single Map Link (if available)', 'abf-addon' ),
+                'label' => esc_html__( 'Single Map Link (if available)', 'abf_addon' ),
                 'type' => \Elementor\Controls_Manager::URL,
-                'placeholder' => esc_html__( 'https://your-link.com', 'abf-addon' ),
+                'placeholder' => esc_html__( 'https://your-link.com', 'abf_addon' ),
                 'default' => [
                     'url' => '',
                     'is_external' => false,
@@ -254,7 +254,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_desc_color',
             [
-                'label' => esc_html__( 'Text Color', 'abf-addon' ),
+                'label' => esc_html__( 'Text Color', 'abf_addon' ),
                 'type' =>Controls_Manager::COLOR,
                 'default'	=> '#000',
                 'selectors' => [
@@ -268,7 +268,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_desc_hover_color',
             [
-                'label' => esc_html__( 'Text hover Color', 'abf-addon' ),
+                'label' => esc_html__( 'Text hover Color', 'abf_addon' ),
                 'type' => Controls_Manager::COLOR,
                 'default'	=> '#fff',
                 'selectors' => [
@@ -280,7 +280,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_box_bgclr',
             [
-                'label' => esc_html__( 'Info Box Background', 'abf-addon' ),
+                'label' => esc_html__( 'Info Box Background', 'abf_addon' ),
                 'type' => Controls_Manager::COLOR,
                 'default'	=> '#1EB2F1',
                 'selectors' => [
@@ -293,7 +293,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $repeater->add_control(
             'abf_box_bgclr_hover',
             [
-                'label' => esc_html__( 'Info Box hover Background', 'abf-addon' ),
+                'label' => esc_html__( 'Info Box hover Background', 'abf_addon' ),
                 'type' => Controls_Manager::COLOR,
                 'default'	=> '#000',
                 'selectors' => [
@@ -307,12 +307,12 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_map_pins',
             array(
-                'label'       => __('Map Pins List', 'abf-addon'),
+                'label'       => __('Map Pins List', 'abf_addon'),
                 'type'        => Controls_Manager::REPEATER,
                 'default'     => array(
                     'abf_map_latitude'  => '23.810331',
                     'abf_map_longitude' => '90.412521',
-                    'abf_pin_title'     => __('Abf  Maps', 'abf-addon'),
+                    'abf_pin_title'     => __('Abf  Maps', 'abf_addon'),
                 ),
                 'fields'      => $repeater->get_controls(),
                 'title_field' => '{{{ abf_pin_title }}}',
@@ -329,7 +329,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'abf-map-settings-section',
             [
-                'label'=>__('Map Settings', 'abf-addon'),
+                'label'=>__('Map Settings', 'abf_addon'),
                 'tab'=> \Elementor\Controls_Manager::TAB_CONTENT
             ]
         );
@@ -337,10 +337,10 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_map_fit_bounds',
             [
-                'label' => __('Auto Fit Map Bounds', 'abf-addon'),
+                'label' => __('Auto Fit Map Bounds', 'abf_addon'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('On', 'abf-addon'),
-                'label_off' => __('Off', 'abf-addon'),
+                'label_on' => __('On', 'abf_addon'),
+                'label_off' => __('Off', 'abf_addon'),
                 'default' => 'yes',
                 'separator' => 'before',
             ]
@@ -349,10 +349,10 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_map_zoom_control',
             [
-                'label' => __('Zoom Control Option', 'abf-addon'),
+                'label' => __('Zoom Control Option', 'abf_addon'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Show', 'abf-addon'),
-                'label_off' => __('Hide', 'abf-addon'),
+                'label_on' => __('Show', 'abf_addon'),
+                'label_off' => __('Hide', 'abf_addon'),
                 'default' => 'no',
                 'separator' => 'before',
             ]
@@ -364,10 +364,10 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_map_dragging_option',
             [
-                'label' => __('Map Dragging', 'abf-addon'),
+                'label' => __('Map Dragging', 'abf_addon'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('On', 'abf-addon'),
-                'label_off' => __('Off', 'abf-addon'),
+                'label_on' => __('On', 'abf_addon'),
+                'label_off' => __('Off', 'abf_addon'),
                 'default' => 'yes',
                 'separator' => 'before',
             ]
@@ -376,7 +376,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_maps_zoom_desktop',
             array(
-                'label'   => __('Zoom Level', 'abf-addon'),
+                'label'   => __('Zoom Level', 'abf_addon'),
                 'type'    => Controls_Manager::SLIDER,
 
                 'range'   => array(
@@ -398,7 +398,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_maps_map_height',
             array(
-                'label'     => __('Height', 'abf-addon'),
+                'label'     => __('Height', 'abf_addon'),
                 'type'      => Controls_Manager::SLIDER,
                 'default'   => array(
                     'size' => 500,
@@ -417,10 +417,10 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_map_popup_show_always',
             [
-                'label' => __('Pin Popup open when load?', 'abf-addon'),
+                'label' => __('Pin Popup open when load?', 'abf_addon'),
                 'type' => Controls_Manager::SWITCHER,
-                'label_on' => __('Load', 'abf-addon'),
-                'label_off' => __('Hide', 'abf-addon'),
+                'label_on' => __('Load', 'abf_addon'),
+                'label_off' => __('Hide', 'abf_addon'),
                 'default' => 'no',
                 'separator' => 'before',
             ]
@@ -429,17 +429,17 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_map_style',
             [
-                'label' => __('Map Style', 'abf-addon'),
+                'label' => __('Map Style', 'abf_addon'),
                 'type' => Controls_Manager::SELECT,
                 'default' => 'CartoDB.Positron',
                 'options' => [
-                    'OpenStreetMap.Mapnik' => esc_html__('Open Street Map', 'abf-addon'),
-                    'Stamen.TonerLite' => esc_html__('Toner Lite', 'abf-addon'),
-                    'Esri.WorldStreetMap' => esc_html__('World Street Map', 'abf-addon'),
-                    'CartoDB.Positron' => esc_html__('Positron ', 'abf-addon'),
-                    'Stadia.AlidadeSmooth' => esc_html__('Stadia Alidade Smooth ', 'abf-addon'),
-                    'Esri.WorldGrayCanvas' => esc_html__('World Gray Canvas ', 'abf-addon'),
-                    'CartoDB.Voyager' => esc_html__('CartoDB Voyager ', 'abf-addon'),
+                    'OpenStreetMap.Mapnik' => esc_html__('Open Street Map', 'abf_addon'),
+                    'Stamen.TonerLite' => esc_html__('Toner Lite', 'abf_addon'),
+                    'Esri.WorldStreetMap' => esc_html__('World Street Map', 'abf_addon'),
+                    'CartoDB.Positron' => esc_html__('Positron ', 'abf_addon'),
+                    'Stadia.AlidadeSmooth' => esc_html__('Stadia Alidade Smooth ', 'abf_addon'),
+                    'Esri.WorldGrayCanvas' => esc_html__('World Gray Canvas ', 'abf_addon'),
+                    'CartoDB.Voyager' => esc_html__('CartoDB Voyager ', 'abf_addon'),
 
                 ],
             ]
@@ -454,7 +454,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'abf_info_popup_style',
             [
-                'label' => esc_html__( 'Popup Info', 'abf-addon' ),
+                'label' => esc_html__( 'Popup Info', 'abf_addon' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -481,7 +481,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_map_info_box_radius',
             array(
-                'label'      => __('Border Radius', 'abf-addon'),
+                'label'      => __('Border Radius', 'abf_addon'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => array('px', '%', 'em'),
                 'default' => [
@@ -496,7 +496,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_info_box_margin',
             array(
-                'label'      => __('Margin', 'abf-addon'),
+                'label'      => __('Margin', 'abf_addon'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => array('px', 'em', '%'),
                 'default' => [
@@ -511,7 +511,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_info_box_padding',
             array(
-                'label'      => __('Padding', 'abf-addon'),
+                'label'      => __('Padding', 'abf_addon'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => array('px', 'em', '%'),
                 'default' => [
@@ -532,7 +532,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'abf_close_icon',
             [
-                'label' => esc_html__( 'Close Icon', 'abf-addon' ),
+                'label' => esc_html__( 'Close Icon', 'abf_addon' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
 
             ]
@@ -543,7 +543,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_close_icon_color',
             [
-                'label' => esc_html__( 'Icon Color', 'abf-addon' ),
+                'label' => esc_html__( 'Icon Color', 'abf_addon' ),
                 'type' =>Controls_Manager::COLOR,
                 'default'	=> '#000',
                 'selectors' => [
@@ -557,7 +557,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_control(
             'abf_close_bg_color',
             [
-                'label' => esc_html__( 'Icon Box Color', 'abf-addon' ),
+                'label' => esc_html__( 'Icon Box Color', 'abf_addon' ),
                 'type' => Controls_Manager::COLOR,
                 'default' => '#fff',
                 'selectors' => [
@@ -571,7 +571,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_close_margin',
             array(
-                'label'      => __('Margin', 'abf-addon'),
+                'label'      => __('Margin', 'abf_addon'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => array('px', 'em', '%'),
                 'selectors'  => array(
@@ -590,7 +590,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->start_controls_section(
             'abf-map-style-control',
             [
-                'label' => esc_html__( 'Map ', 'abf-addon' ),
+                'label' => esc_html__( 'Map ', 'abf_addon' ),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -599,7 +599,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name' => 'border',
-                'label' => esc_html__( 'Border', 'abf-addon' ),
+                'label' => esc_html__( 'Border', 'abf_addon' ),
                 'selector' => '{{WRAPPER}} .abf-map-container ',
             ]
         );
@@ -607,7 +607,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_map_radius',
             array(
-                'label'      => __('Border Radius', 'abf-addon'),
+                'label'      => __('Border Radius', 'abf_addon'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => array('px', '%', 'em'),
                 'selectors'  => array(
@@ -619,7 +619,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_group_control(
             Group_Control_Box_Shadow::get_type(),
             array(
-                'label'    => __('Box Shadow', 'abf-addon'),
+                'label'    => __('Box Shadow', 'abf_addon'),
                 'name'     => 'abf_map_shadow',
                 'selector' => '{{WRAPPER}} .abf-map-container',
             )
@@ -628,7 +628,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_map_box_margin',
             array(
-                'label'      => __('Margin', 'abf-addon'),
+                'label'      => __('Margin', 'abf_addon'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => array('px', 'em', '%'),
                 'selectors'  => array(
@@ -640,7 +640,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
         $this->add_responsive_control(
             'abf_map_box_padding',
             array(
-                'label'      => __('Padding', 'abf-addon'),
+                'label'      => __('Padding', 'abf_addon'),
                 'type'       => Controls_Manager::DIMENSIONS,
                 'size_units' => array('px', 'em', '%'),
                 'selectors'  => array(

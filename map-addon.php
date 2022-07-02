@@ -1,12 +1,12 @@
 <?php
 /**
  * Plugin Name: Abf Elementor Addons
- * Description: Add multiple pin on your map
+ * Description: Abf Addons for Elementor  plan is cover maximum plugins & 5 widgets in per months.
  * Plugin URI:  https://elementor.com/
  * Version:     1.0.0
  * Author:      Khairul Islam
  * Author URI:  https://developers.elementor.com/
- * Text Domain: abf_wiget
+ * Text Domain: abf_addon
  *
  * Elementor tested up to: 3.7.2
  * Elementor Pro tested up to: 3.5.0
