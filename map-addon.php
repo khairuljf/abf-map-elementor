@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Multiple Pin marker widget for elementor
+ * Plugin Name: Abf Elementor Addons
  * Description: Add multiple pin on your map
  * Plugin URI:  https://elementor.com/
  * Version:     1.0.0

@@ -1,69 +1,54 @@
 jQuery(window).on("elementor/frontend/init", function () {
     elementorFrontend.hooks.addAction(
-        "frontend/element_ready/hip-map-id.default",
+        "frontend/element_ready/abf-map-id.default",
         function ($scope, $) {
 
             window.addEventListener('load', global_initialize)
             var latLngArr = [];
             function global_initialize(){
-                var mapElement = $scope.find(".hip-custom-map");
+                var mapElement = $scope.find(".abf-map");
                 var mapSettings = mapElement.data("settings");
-                newMapData = renderNewMap(mapElement, mapSettings);
+                newMapData =  renderNewMap(mapElement, mapSettings);
             }
 
             function renderNewMap(map,settings){
-
-                let windowCurrentWIdht = window.innerWidth;
                 let zoom  = settings["zoom_desktop"];
-                if(windowCurrentWIdht<=1024){
-                    zoom  = settings["zoom_tab"];
-                }
-
-                if(windowCurrentWIdht<=767){
-                    zoom  = settings["zoom_mobile"];
-                }
-
                 let mapstyle = settings.mapstyle;
-                let centerLat = settings.centerlat;
-                let centerLong = settings.centerlong;
                 let autoOpen = settings.automaticOpen;
                 let fitBounds = settings.fitBounds;
                 let map_zoom_control = settings.map_zoom_control   == 'yes'? true : false
-                let zoom_in_double_click = settings.double_click_option   == 'yes'? true : false
-                let zoom_in_while = settings.mouse_wheel_option == 'yes'  ? true : false
                 let map_dragging = settings.map_dragging_option   == 'yes'? true : false
 
+                let centerLat  = '23.810331';
+                let centerLong  = '90.412521';
 
+                console.log(mapstyle)
+
+                // Settins for Map
                 let args = {
                     zoom: zoom,
-                    mapstyle: mapstyle,
 					zoomControl: map_zoom_control,
-                    doubleClickZoom: zoom_in_double_click,
-                    scrollWheelZoom: zoom_in_while,
                     dragging:map_dragging,
 					closePopupOnClick: false, // No need to hide when click outer of close icon
                     center: { lat: centerLat, lng: centerLong }
-
                 };
 
-                let markers = $scope.find(".hip-pin-icon");
+                let markers = $scope.find(".abf-pin-icon");
 
                 var map = L.map('map', args);
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 }).addTo(map);
 
-                map.markers = [];
-                var bounds = 'yes';
                 // add markers
                 markers.each(function (index) {
                     add_marker(jQuery(this),map, autoOpen);;
                 });
+
                 if ('yes' == fitBounds){
                     map.fitBounds(latLngArr,{ padding: [50, 50] });
                 }
-                L.tileLayer.provider(`${args.mapstyle}`).addTo(map);
-                document.getElementsByClassName( 'leaflet-control-attribution' )[0].style.display = 'none';
+                L.tileLayer.provider(`${mapstyle}`).addTo(map);
                 //  return map;
             }
             function add_marker(pin ,map,autoOpen){
@@ -71,7 +56,9 @@ jQuery(window).on("elementor/frontend/init", function () {
                 let long = pin.attr("data-lng");
                 let pin_icon = pin.attr("data-icon");
                 let pin_url = pin.attr("data-url");
+                let url_target = pin.attr("data-target") ? 'target="_blank"' : '';
                 let pin_title = pin.attr("data-title");
+                let pin_desc = pin.attr("data-desc");
                 let el_id = pin.attr("item_id");
                 let LeafIcon = L.Icon.extend({
                     options: {
@@ -81,10 +68,13 @@ jQuery(window).on("elementor/frontend/init", function () {
                     }
                 });
 
-
-
                 let  hip_cs_icon = new LeafIcon({iconUrl: pin_icon});
-                let pin_info_box = `<a  href="${pin_url}">${pin_title}</a>` ;
+                let pin_info_box = ''
+                if(pin_url){
+                    pin_info_box = `<a ${url_target} href="${pin_url}">${pin_title}</a><p>${pin_desc}</p>` ;
+                }else{
+                    pin_info_box = `<p>${pin_title}</p><p>${pin_desc}</p>` ;
+                }
 
 
 				//create marker

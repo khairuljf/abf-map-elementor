@@ -4,13 +4,27 @@
 	max-width: 100%;
 	max-height: 100%;
 }
+
+#map .leaflet-popup-content{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
 #map .leaflet-popup-content,
 #map .leaflet-popup-content p{
 	margin: 0;
 }
-.hip-map-info{
+#map .leaflet-popup-content a
+{
+	margin-bottom: 5px;
+}
+#map .leaflet-popup-content p:nth-child(2){
+	margin-top: 5px;
+}
+.abf-map-container .leaflet-control-attribution.leaflet-control {
 	display: none;
 }
+
 
 
 .leaflet-popup-tip-container {
