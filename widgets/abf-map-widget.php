@@ -79,7 +79,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
      * @return string Widget title.
      */
     public function get_title() {
-        return esc_html__( 'Abf Map', 'abf_addon' );
+        return esc_html__( 'Abf Map ', 'abf_addon' );
     }
 
     /**
