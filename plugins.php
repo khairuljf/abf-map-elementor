@@ -7,9 +7,6 @@
  * Author URI:  https://github.com/khairuljf
  * Plugin URI:  https://github.com/khairuljf/abf-map-elementor
  * Text Domain: abf_addon
- *
- * Elementor tested up to: 3.7.2
- * Elementor Pro tested up to: 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
