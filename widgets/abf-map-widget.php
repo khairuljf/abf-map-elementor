@@ -11,9 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Elementor oEmbed Widget.
+ * Elementor map pin widget
  *
- * Elementor widget that inserts an embbedable content into the page, from any given URL.
+ * Load multiple map in your your website
  *
  * @since 1.0.0
  */
@@ -59,8 +59,6 @@ class abf_map_Widget extends \Elementor\Widget_Base {
     /**
      * Get widget name.
      *
-     * Retrieve oEmbed widget name.
-     *
      * @since 1.0.0
      * @access public
      * @return string Widget name.
@@ -72,7 +70,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
     /**
      * Get widget title.
      *
-     * Retrieve oEmbed widget title.
+     * Retrieve abf widget title.
      *
      * @since 1.0.0
      * @access public
@@ -85,7 +83,7 @@ class abf_map_Widget extends \Elementor\Widget_Base {
     /**
      * Get widget icon.
      *
-     * Retrieve oEmbed widget icon.
+     * Retrieve abf widget icon.
      *
      * @since 1.0.0
      * @access public
